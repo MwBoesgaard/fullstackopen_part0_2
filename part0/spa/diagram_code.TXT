@@ -1,0 +1,27 @@
+#https://www.websequencediagrams.com/
+
+title User access single page app (spa)
+
+
+note over browser:
+The user enters the site.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code 304
+
+note over browser:
+This causes the browser to
+request js, css and html files etc.
+end note
+
+browser->server: HTTP GET /spa
+server-->browser: HTML-code 304
+browser->server: HTTP GET /main.css
+server-->browser: HTML-code 304
+browser->server: HTTP GET /spa.js
+server-->browser: HTML-code 304
+browser->server: HTTP GET /data.json
+server-->browser: HTML-code 304
+browser->server: HTTP GET /favicon.ico
+server-->browser: HTML-code 200

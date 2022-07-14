@@ -1,0 +1,17 @@
+#https://www.websequencediagrams.com/
+
+title User creates a new note (spa)
+
+note over browser:
+The form button is clicked, the browser
+sends a POST request to the server
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML-code 201
+
+note over browser:
+The sever responds with a JSON
+object of the sent data, and renders
+the changes in the browser dynamically.
+end note

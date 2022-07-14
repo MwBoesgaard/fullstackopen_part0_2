@@ -1,0 +1,32 @@
+#https://www.websequencediagrams.com/
+
+title User creates a new note
+
+note over browser:
+The form button is clicked, the browser
+sends a POST request to the server
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+server-->browser: HTML-code 302
+
+note over browser:
+The sever responds with a URL
+redirect, causing the browser
+to do another GET request.
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code 200
+
+note over browser:
+Being redirected to the /notes page
+the browser requests js, css and html files.
+end note
+
+browser->server: HTTP GET main.css
+server-->browser: HTML-code 200
+browser->server: HTTP GET main.js
+server-->browser: HTML-code 200
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code 200
